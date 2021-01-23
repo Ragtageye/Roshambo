@@ -8,7 +8,27 @@ function computerPlay () {                              //generates a random num
 }
 
 function playRound(playerSelection, computerResponse) {
-
+    if (playerSelection == computerResponse) {
+        return "TIE!"
+    }
+    if (1 < computerResponse < playerSelection) {
+        return "Rock Beats Scissors! Congrats"
+    }
+    if (1 < playerSelection < computerResponse ) {
+    return "Rock Beats Scissors! Sorry!";
+    }
+    if (playerSelection < 2 < computerResponse) {
+    return "Paper Beats Scissors! Congrats!"
+    }
+    if (computerResponse < 2 < playerSelection) {
+    return "Paper Beats Scissors! Sorry!"
+    }
+    if (playerSelection < computerResponse < 3) {
+    return "Scissors Beats Paper! Sorry!"
+    }
+    if (computerResponse < playerSelection < 3) {
+    return "Scissors Beats Paper! Congrats!"
+    }
 }
 </script>
 
