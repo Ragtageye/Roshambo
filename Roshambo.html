@@ -2,34 +2,45 @@
 <head>
 </head>
 <script>
-    const computerResponse = computerPlay();
-function computerPlay () {                              //generates a random number between and including 1 and 3
-   return Math.floor((Math.random() * 3) + 1);
+
+const computerResponse = computerPlay();
+function computerPlay() {                           //Generates a random number, converts that number into a word and outputs that word
+   computerOutput = Math.floor((Math.random() * 3) + 1);
+    if (computerOutput == 3) {
+        return "ROCK";
+    } else if (computerOutput == 2) {
+        return "SCISSORS";
+    } else return "PAPER";
 }
 
-function playRound(playerSelection, computerResponse) {
+
+    function playRound (playerSelection, computerResponse) {    
+
     if (playerSelection == computerResponse) {
-        return "TIE!"
+        return "TIE!";
     }
-    if (1 < computerResponse < playerSelection) {
-        return "Rock Beats Scissors! Congrats"
+    else if (playerSelection == 'ROCK' && computerResponse == 'SCISSORS') {
+        return "Rock Beats Scissors! Congrats";
     }
-    if (1 < playerSelection < computerResponse ) {
+    else if (playerSelection == 'SCISSORS' && computerResponse == 'ROCK') {
     return "Rock Beats Scissors! Sorry!";
     }
-    if (playerSelection < 2 < computerResponse) {
-    return "Paper Beats Scissors! Congrats!"
+    else if (playerSelection == 'PAPER' && computerResponse == 'ROCK' ) {
+    return "Paper Beats Rock! Congrats!";
     }
-    if (computerResponse < 2 < playerSelection) {
-    return "Paper Beats Scissors! Sorry!"
+    else if (playerSelection == 'ROCK' && computerResponse == 'PAPER') {
+    return "Paper Beats Rock! Sorry!";
     }
-    if (playerSelection < computerResponse < 3) {
-    return "Scissors Beats Paper! Sorry!"
+    else if (playerSelection == 'PAPER' && computerResponse == 'SCISSORS') {
+    return "Scissors Beats Paper! Sorry!";
     }
-    if (computerResponse < playerSelection < 3) {
-    return "Scissors Beats Paper! Congrats!"
+    else (playerSelection == 'SCISSORS' && computerResponse == 'PAPER') {
+    return "Scissors Beats Paper! Congrats!";
     }
 }
+
+
+
 </script>
 
 
