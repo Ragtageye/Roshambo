@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <head>
+    <meta charset="utf-8"/>
 </head>
 <script>
 
-const computerResponse = computerPlay();
+let playerSelection;
+let computerResponse;
+let computerScore = 0;
+let playerScore = 0;
+
+
 function computerPlay() {                           //Generates a random number, converts that number into a word and outputs that word
    computerOutput = Math.floor((Math.random() * 3) + 1);
     if (computerOutput == 3) {
@@ -13,30 +19,30 @@ function computerPlay() {                           //Generates a random number,
     } else return "PAPER";
 }
 
+function playRound (playerSelection, computerResponse) {
+    computerResponse = computerPlay().toUpperCase();
+    playerSelection = playerSelection.toUpperCase();
 
-    function playRound (playerSelection, computerResponse) {    
-
-    if (playerSelection == computerResponse) {
-        return "TIE!";
-    }
-    else if (playerSelection == 'ROCK' && computerResponse == 'SCISSORS') {
+    if ((playerSelection === "ROCK") && (computerResponse === "SCISSORS")) {
         return "Rock Beats Scissors! Congrats";
     }
-    else if (playerSelection == 'SCISSORS' && computerResponse == 'ROCK') {
+    else if ((playerSelection === "SCISSORS") && (computerResponse === "ROCK")) {
     return "Rock Beats Scissors! Sorry!";
     }
-    else if (playerSelection == 'PAPER' && computerResponse == 'ROCK' ) {
+    else if ((playerSelection === "PAPER") && (computerResponse === "ROCK") ) {
     return "Paper Beats Rock! Congrats!";
     }
-    else if (playerSelection == 'ROCK' && computerResponse == 'PAPER') {
+    else if ((playerSelection === "ROCK") && (computerResponse === "PAPER")) {
     return "Paper Beats Rock! Sorry!";
     }
-    else if (playerSelection == 'PAPER' && computerResponse == 'SCISSORS') {
+    else if ((playerSelection === "PAPER") && (computerResponse === "SCISSORS")) {
     return "Scissors Beats Paper! Sorry!";
     }
-    else (playerSelection == 'SCISSORS' && computerResponse == 'PAPER') {
+    else if ((playerSelection === "SCISSORS") && (computerResponse === "PAPER")) {
     return "Scissors Beats Paper! Congrats!";
-    }
+    } else if (playerSelection === computerResponse) {
+        return "TIE!";
+    } 
 }
 
 
