@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8"/>
 </head>
+
 <script>
 
 let playerSelection;
@@ -24,26 +25,46 @@ function playRound (playerSelection, computerResponse) {
     playerSelection = playerSelection.toUpperCase();
 
     if ((playerSelection === "ROCK") && (computerResponse === "SCISSORS")) {
+        playerScore++;
         return "Rock Beats Scissors! Congrats";
     }
     else if ((playerSelection === "SCISSORS") && (computerResponse === "ROCK")) {
-    return "Rock Beats Scissors! Sorry!";
+        computerScore++;
+        return "Rock Beats Scissors! Sorry!";
     }
     else if ((playerSelection === "PAPER") && (computerResponse === "ROCK") ) {
-    return "Paper Beats Rock! Congrats!";
+        playerScore++;
+        return "Paper Beats Rock! Congrats!";
     }
     else if ((playerSelection === "ROCK") && (computerResponse === "PAPER")) {
-    return "Paper Beats Rock! Sorry!";
+        computerScore++;
+        return "Paper Beats Rock! Sorry!";
     }
     else if ((playerSelection === "PAPER") && (computerResponse === "SCISSORS")) {
-    return "Scissors Beats Paper! Sorry!";
+        computerScore++;
+        return "Scissors Beats Paper! Sorry!";
     }
     else if ((playerSelection === "SCISSORS") && (computerResponse === "PAPER")) {
-    return "Scissors Beats Paper! Congrats!";
+        playerScore++;
+        return "Scissors Beats Paper! Congrats!";
     } else if (playerSelection === computerResponse) {
         return "TIE!";
-    } 
+    }
 }
+
+function game() {
+    if (computerScore >= 5) {
+        alert ("YOU LOSE BIG TIME");
+        computerScore = 0;
+        playerScore = 0;
+    } if (playerScore >= 5) {
+        alert ("YOU WIN BIG TIME");
+        computerScore = 0;
+        playerScore = 0;
+    }
+}
+
+
 
 
 
